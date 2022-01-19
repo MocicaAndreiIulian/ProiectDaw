@@ -28,7 +28,7 @@ namespace Project1.Repositories
 
         public List<Casa> GetAllWithInclude()
         {
-            return _table.Include(x => x.Useri).ToList();
+            return _table.Include(x => x.Adresa).ToList();
         }
 
         public List<Casa> GetAllWithJoin()
