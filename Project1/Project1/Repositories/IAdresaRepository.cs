@@ -9,6 +9,6 @@ namespace Project1.Repositories
     public interface IAdresaRepository : IGenericRepository<Adresa>
     {
         Adresa GetAdresaAllDetails(int id);
-        List<Adresa> GetAdreseAllDetails();
+        List<Adresa> GetAdresaAllDetails();
     }
 }

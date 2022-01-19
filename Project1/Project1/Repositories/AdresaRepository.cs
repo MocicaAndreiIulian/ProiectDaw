@@ -19,7 +19,7 @@ namespace Project1.Repositories
                 .FirstOrDefault();
         }
 
-        public List<Adresa> GetAdreseAllDetails()
+        public List<Adresa> GetAdresaAllDetails()
         {
             return _table
                 .ToList();

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Project1.Repositories
 {
-        public interface IgenericRepository<T> where T : class
+        public interface IGenericRepository<T> where T : class 
         {
             void Create(T entity);
             void Update(T entity);
