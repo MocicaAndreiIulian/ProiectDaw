@@ -20,7 +20,7 @@ namespace Project1.Repositories
                 .FirstOrDefault();
         }
 
-        public List<Casa> GetCaseAllDetails()
+        public List<Casa> GetCasaAllDetails()
         {
             return _table
                 .ToList();

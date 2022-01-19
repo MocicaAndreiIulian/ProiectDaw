@@ -9,7 +9,7 @@ namespace Project1.Repositories
     public interface ICasaRepository : IGenericRepository<Casa>
     {
         Casa GetCasaAllDetails(int id);
-        List<Casa> GetCaseAllDetails();
+        List<Casa> GetCasaAllDetails();
         List<Casa> GetAllWithInclude();
         List<Casa> GetAllWithJoin();
     }

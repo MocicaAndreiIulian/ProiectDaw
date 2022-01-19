@@ -27,6 +27,8 @@ namespace Project1
         {
             services.AddTransient<IAdresaRepository, AdresaRepository>();
             services.AddTransient<IAdresaService, AdresaService>();
+            services.AddTransient<ICasaRepository, CasaRepository>();
+            services.AddTransient<ICasaService, CasaService>();
             services.AddDbContext<CasaContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory

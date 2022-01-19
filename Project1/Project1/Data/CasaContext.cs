@@ -30,7 +30,7 @@ namespace Project1.Data
             builder.Entity<Adresa>()
             .HasOne(x => x.Casa)
             .WithOne(y => y.Adresa)
-            .HasForeignKey<Casa>(z => z.CasaId);
+            .HasForeignKey<Casa>(z => z.AdresaId);
 
             builder.Entity<UserRol>()
                 .HasOne(x => x.User)

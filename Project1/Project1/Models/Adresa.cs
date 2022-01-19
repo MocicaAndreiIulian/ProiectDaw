@@ -10,7 +10,7 @@ namespace Project1.Models
     {
         [Key]
         public int AdresaId { get; set; }
-        public int CasaId { get; set; }
+        //public int CasaId { get; set; }
         public Casa Casa { get; set; }
         public string AdresaName { get; set; }
     }

@@ -12,7 +12,6 @@ namespace Project1.Migrations
                 {
                     AdresaId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CasaId = table.Column<int>(type: "int", nullable: false),
                     AdresaName = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -37,15 +36,17 @@ namespace Project1.Migrations
                 name: "Casa",
                 columns: table => new
                 {
-                    CasaId = table.Column<int>(type: "int", nullable: false),
-                    Nume = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    CasaId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nume = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AdresaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Casa", x => x.CasaId);
                     table.ForeignKey(
-                        name: "FK_Casa_Adresa_CasaId",
-                        column: x => x.CasaId,
+                        name: "FK_Casa_Adresa_AdresaId",
+                        column: x => x.AdresaId,
                         principalTable: "Adresa",
                         principalColumn: "AdresaId",
                         onDelete: ReferentialAction.Cascade);
@@ -98,6 +99,12 @@ namespace Project1.Migrations
                         principalColumn: "UserId",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Casa_AdresaId",
+                table: "Casa",
+                column: "AdresaId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserRoles_RoleId",

@@ -11,6 +11,7 @@ namespace Project1.Models
         [Key]
         public int CasaId { get; set; }
         public string Nume { get; set; }
+        public int AdresaId { get; set; }
         public Adresa Adresa { get; set; }
         public ICollection<User> Useri { get; set; }
     }

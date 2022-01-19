@@ -9,7 +9,7 @@ using Project1.Data;
 namespace Project1.Migrations
 {
     [DbContext(typeof(CasaContext))]
-    [Migration("20220118122659_InitialCreate")]
+    [Migration("20220119120203_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,9 +30,6 @@ namespace Project1.Migrations
                     b.Property<string>("AdresaName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CasaId")
-                        .HasColumnType("int");
-
                     b.HasKey("AdresaId");
 
                     b.ToTable("Adresa");
@@ -41,12 +38,20 @@ namespace Project1.Migrations
             modelBuilder.Entity("Project1.Models.Casa", b =>
                 {
                     b.Property<int>("CasaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AdresaId")
                         .HasColumnType("int");
 
                     b.Property<string>("Nume")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CasaId");
+
+                    b.HasIndex("AdresaId")
+                        .IsUnique();
 
                     b.ToTable("Casa");
                 });
@@ -115,7 +120,7 @@ namespace Project1.Migrations
                 {
                     b.HasOne("Project1.Models.Adresa", "Adresa")
                         .WithOne("Casa")
-                        .HasForeignKey("Project1.Models.Casa", "CasaId")
+                        .HasForeignKey("Project1.Models.Casa", "AdresaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
