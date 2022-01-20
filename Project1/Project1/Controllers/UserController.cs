@@ -45,7 +45,6 @@ namespace Project1.Controllers
         [Authorize]
         public IActionResult GetAll()
         {
-            var user = (User)HttpContext.Items["User"];
             return Ok(_userService.GetAll().ToList());
         }
     }

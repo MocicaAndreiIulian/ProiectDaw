@@ -10,5 +10,6 @@ namespace Project1.Repositories
     {
         Adresa GetAdresaAllDetails(int id);
         List<Adresa> GetAdresaAllDetails();
+        List<Adresa> GetAllWithInclude();
     }
 }

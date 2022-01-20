@@ -1,4 +1,5 @@
-﻿using Project1.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Project1.Data;
 using Project1.Models;
 using System;
 using System.Collections.Generic;

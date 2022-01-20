@@ -1,4 +1,5 @@
-﻿using Project1.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Project1.Data;
 using Project1.Models;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,10 @@ namespace Project1.Repositories
         {
             return _table
                 .ToList();
+        }
+        public List<Adresa> GetAllWithInclude()
+        {
+            return _table.Include(x => x.Casa).ToList();
         }
     }
 }

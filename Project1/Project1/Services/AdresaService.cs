@@ -46,7 +46,7 @@ namespace Project1.Services
 
         public List<Adresa> GetAll()
         {
-            return _adresaRepository.GetAdresaAllDetails();
+            return _adresaRepository.GetAllWithInclude();
         }
 
         public Adresa Update(Adresa cat)

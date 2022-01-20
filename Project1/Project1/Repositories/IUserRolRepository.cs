@@ -8,5 +8,6 @@ namespace Project1.Repositories
 {
     public interface IUserRolRepository : IGenericRepository<UserRol>
     {
+       
     }
 }
