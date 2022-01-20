@@ -36,7 +36,7 @@ namespace Project1.Repositories
         public List<User> GetUsersAllDetails()
         {
             return _table
-                .Include(user => user.UserRoles)
+                .Include(user => user.UserRoles).Include(x => x.Casa)
                 .ToList();
         }
     }
